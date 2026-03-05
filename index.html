@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Horse Derby</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Ultimate Horse Derby - O simulador definitivo de corrida de cavalos e apostas.">
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- Status Bar -->
+        <header id="status-bar">
+            <div class="logo">
+                <h1>Ultimate Horse Derby</h1>
+            </div>
+            <div class="balance-container">
+                <img src="assets/coin.png" alt="Coin" class="coin-icon">
+                <span id="balance-amount">1000</span>
+                <span class="currency-label">Moedas</span>
+            </div>
+        </header>
+
+        <!-- Main Display -->
+        <main id="game-viewport">
+            <div id="race-track" class="hidden">
+                <!-- Lanes will be generated here -->
+            </div>
+
+            <div id="prep-screen" class="active">
+                <div class="glass-panel">
+                    <h2>Preparação para a Corrida</h2>
+                    <p>Escolha o seu campeão e faça sua aposta!</p>
+
+                    <div id="horse-selection-list">
+                        <!-- Horses injected by JS -->
+                    </div>
+
+                    <div class="betting-controls">
+                        <div class="input-group">
+                            <label for="bet-amount">Quantia da Aposta:</label>
+                            <input type="number" id="bet-amount" value="100" min="10" step="10">
+                        </div>
+                        <div id="selected-horse-info">
+                            Selecione um cavalo acima
+                        </div>
+                        <button id="start-race-btn" class="primary-btn" disabled>LARGADA!</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="result-screen" class="hidden">
+                <div class="glass-panel result-content">
+                    <h2 id="result-title">RESULTADOS</h2>
+                    <div id="winner-display">
+                        <!-- Winner details -->
+                    </div>
+                    <div id="payout-info"></div>
+                    <button id="reset-game-btn" class="primary-btn">VOLTAR PARA CABRIÚVA</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Event Log -->
+        <aside id="event-log">
+            <div class="log-header">LOG DE EVENTOS</div>
+            <div id="log-messages">
+                <p class="system-msg">Bem-vindo ao Ultimate Horse Derby!</p>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
